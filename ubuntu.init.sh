@@ -4,7 +4,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo apt install curl -y
 
-# kubectl + git + 
+# kubectl + git
 sudo mkdir -p /opt/kubectl && cd /opt/kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
@@ -14,7 +14,6 @@ sudo apt-get remove --purge libreoffice* -y || echo "LibreOffice Pre-Installed P
 sudo apt-get clean
 sudo apt-get autoremove -y
 
-
 # vscode
 sudo apt-get update
 sudo apt install software-properties-common apt-transport-https wget -y
@@ -22,3 +21,8 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install code -y
+
+# kubectx
+sudo mkdir -p /opt/kubectx && cd /opt/kubectx && sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
