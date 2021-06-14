@@ -37,3 +37,28 @@ sudo mkdir -p /opt/kops && cd /opt/kops
 sudo curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
 chmod +x ./kops-linux-amd64
 sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+# brightness
+
+
+# terraform
+sudo mkdir -p /opt/terraform && cd /opt/terraform 
+sudo wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
+sudo unzip terraform_1.0.0_linux_amd64.zip
+sudo rm -rf terraform_1.0.0_linux_amd64.zip 
+sudo chmod +x terraform
+sudo mv ./terraform /usr/bin/
+
+# helm
+sudo mkdir -p /opt/helm && cd /opt/helm
+sudo wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin
+sudo tar xvf helm-v3.4.1-linux-amd64.tar.gz
+sudo rm -rf helm-v3.4.1-linux-amd64.tar.gz
+sudo rm -rf linux-amd64/
+
+
+# 
+
+
+
