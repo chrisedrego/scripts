@@ -58,7 +58,18 @@ sudo rm -rf helm-v3.4.1-linux-amd64.tar.gz
 sudo rm -rf linux-amd64/
 
 
-# 
+# nodejs
+sudo apt-get update
+sudo apt install nodejs -y
+sudo apt install npm -y
 
+# priturnl
+sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+deb https://repo.pritunl.com/stable/apt bionic main
+EOF
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+sudo apt-get update
+sudo apt-get install pritunl-client-electron
 
 
