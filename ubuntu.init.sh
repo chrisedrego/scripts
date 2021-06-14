@@ -26,3 +26,14 @@ sudo apt install code -y
 sudo mkdir -p /opt/kubectx && cd /opt/kubectx && sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+sudo mkdir -p ~/.kube
+
+# aws-cli
+sudo apt-get install aws-cli
+sudo mkdir -p ~/.aws
+
+# kops
+sudo mkdir -p /opt/kops && cd /opt/kops
+sudo curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+chmod +x ./kops-linux-amd64
+sudo mv kops-linux-amd64 /usr/local/bin/kops
